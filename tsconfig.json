@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+   "lib": ["ESNext", "DOM"],
+   "strict": false,
+   "module": "CommonJS",
+   "target": "ES5",
+   "outDir": "./dist",
+   "rootDir": "./src",
+   "noUnusedParameters": true,
+   "noUnusedLocals": true,
+   "alwaysStrict": true
+  }
+}
