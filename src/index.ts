@@ -202,3 +202,74 @@ function addToDb(database: IDatabase) {
 }
 
 addToDb(new MongoDb());
+
+enum Colours {
+  DARK = "#000",
+  LIGHT = "#fff",
+}
+
+console.log(Colours.DARK);
+
+enum BookGenre {
+  FANTASY = "Fantasy",
+  MYSTERY = "Mystery",
+  THRILLER = "Thriller",
+  ROMANCE = "Romance",
+  WESTERNS = "Westerns",
+  DYSTOPIAN = "Dystopian",
+  CONTEMPORARY = "Contemporary",
+}
+
+abstract class Book {
+  private name: string;
+  private author: string;
+  private price: number;
+  private pageCount: number;
+  private genre: string;
+
+  constructor(
+    name: string,
+    author: string,
+    price: number,
+    pageCount: number,
+    genre: string
+  ) {
+    this.name = name;
+    this.author = author;
+    this.price = price;
+    this.pageCount = pageCount;
+    this.genre = genre;
+  }
+
+  getInfo(): string {
+    return `
+      The Book Name is ${this.name}.
+      Author name is ${this.author}.
+      ${this.name}'s genre is ${this.genre}.
+      ${this.name}'s price is ${this.price.toFixed(2)}$
+      and Its page count ${this.pageCount}
+    `;
+  }
+}
+
+class FantasyBook extends Book {
+  constructor(
+    name: string,
+    author: string,
+    price: number,
+    pageCount: number,
+    genre: string
+  ) {
+    super(name, author, price, pageCount, genre);
+  }
+}
+
+const myFantasyBook = new FantasyBook(
+  "The Lord of the Rings",
+  "J. R. R. Tolkien",
+  50,
+  800,
+  BookGenre.FANTASY
+);
+
+console.log(myFantasyBook.getInfo());
