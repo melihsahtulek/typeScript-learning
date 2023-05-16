@@ -2,4 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var faker_1 = require("@faker-js/faker");
 var fullName = faker_1.faker.name.fullName();
-console.log(fullName);
+var age = faker_1.faker.number.int({ max: 100 });
+var isChecked = false;
+var words = [];
+words.push(faker_1.faker.word.words({ count: 1 }));
+var cities = ["New York", "Oslo"];
+console.log(fullName, age, isChecked);
+console.log(words);
+console.log(cities);
